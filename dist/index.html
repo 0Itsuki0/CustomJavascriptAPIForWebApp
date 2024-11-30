@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<!-- ************* provided by Itsuki ************* -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Page Provided By Itsuki</title>
+    <script>
+        // script provided by itsuki
+
+        // predefined page data to pass into the API
+        window.itsuki = {
+            "pageData": {
+                "title": "Itsuki World!"
+            }
+        };
+
+        function formConfirm() {
+            console.log("form confirmed");
+            document.getElementById("confirmResult").innerHTML = "Confirmed!";
+        }
+    </script>
+
+    <!-- JavascriptAPI provided -->
+    <script src="bundle.js"></script>
+</head>
+
+
+<body>
+    <h3>Page Provided By Itsuki</h3>
+    <label for="name">Name: </label>
+    <input id="name" /><br>
+    <label for="email">Email: </label>
+    <input id="email" /><br>
+    <p>Confirm Button to fire "itsuki.confirm" events</p>
+    <button onclick="formConfirm()">Confrim</button>
+    <p id="confirmResult"></p>
+</body>
+<!-- ********************* End ********************* -->
+<!-- *********************************************** -->
+
+
+<!-- Script Provided by other developers -->
+<script>
+    // script provided by other developers for customizing our page behavior with the Javascript API We provide
+    // event with custom data
+    (function () {
+        // triggered on page show
+        itsuki.events.on("itsuki.show", function (event) {
+            console.log(event);
+            // do something with custom event data
+        });
+
+        // triggered on confirm button click
+        // event with custom data
+        // return true to procced onto the button click event
+        // return false to terminate
+        itsuki.events.on("itsuki.confirm", function (event) {
+            console.log(event);
+            const name = event.data.name;
+            if (name.length === 0) {
+                alert('No empty name!');
+                return false;
+            }
+
+            const isnum = /^\d+$/.test(name);
+            if (isnum) {
+                alert('You cannot have a name with only digit!');
+                return false;
+            }
+
+            return true; //or false to terminate the default even
+        });
+    })();
+</script>
+
+</html>
