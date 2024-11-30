@@ -5,7 +5,7 @@ An example of a Javascript API that we use a lot will be `target.addEventListene
 <br>
 This project is a skeleton for creating such APIs and allowing other developers to use those to add custom callbacks to specific events we dispatch with some custom data we provide.
 
-For more details regarding to this project and code explanation, please refer to my blog: [Create Custom Plugin Provider (Javascript API) for Web App]().
+For more details regarding to this project and code explanation, please refer to my blog: [Create Custom Plugin Provider (Javascript API) for Web App](https://medium.com/@itsuki.enjoy/create-custom-plugin-provider-javascript-api-for-web-app-a3d3c6c2b37d).
 
 
 ## Specifics
